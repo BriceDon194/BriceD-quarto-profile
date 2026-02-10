@@ -1,0 +1,153 @@
+---
+title: "My Data Visualization Portfolio"
+format: 
+  html:
+    output-file: index.html
+execute:
+  echo: true
+  eval: true
+---
+
+# Welcome to My Portfolio! 📊
+
+Hello! My nickname is Brice Donaldson. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills.
+
+## About This Portfolio
+
+This portfolio demonstrates how Quarto can seamlessly integrate Python code and visualizations into professional documents. Each chart below is created using matplotlib and embedded directly into this document.
+
+## Simple Line Chart
+
+Let's create a simple line chart showing some sample data:
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Create sample data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Create the plot
+plt.figure(figsize=(7, 4.75))
+plt.plot(x, y, 'b-', linewidth=2, label='sin(x)')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+plt.title('My First Matplotlib Chart')
+plt.grid(True, alpha=0.3)
+plt.legend()
+plt.show()
+```
+
+## Bar Chart Example
+
+Here's a bar chart showing some sample data:
+
+```{python}
+# Sample data for bar chart
+categories = ['A', 'B', 'C', 'D', 'E']
+values = [23, 45, 56, 78, 32]
+
+plt.figure(figsize=(7, 4.75))
+bars = plt.bar(categories, values, color=['red', 'green', 'blue', 'orange', 'purple'])
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.title('Sample Bar Chart')
+
+# Add value labels on bars
+for bar, value in zip(bars, values):
+    plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1, 
+             str(value), ha='center', va='bottom')
+
+plt.show()
+```
+
+## Scatter Plot: Car Performance Analysis
+
+Here's a scatter plot analyzing the relationship between engine horsepower and fuel efficiency (MPG) for different vehicles:
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Real car data: [Car Model, Horsepower, MPG (combined)]
+cars_data = [
+    ['Toyota Prius', 121, 52],
+    ['Honda Civic', 158, 36],
+    ['Toyota Corolla', 139, 35],
+    ['Mazda3', 186, 32],
+    ['Hyundai Elantra', 147, 33],
+    ['Nissan Sentra', 149, 33],
+    ['Subaru Impreza', 152, 31],
+    ['Volkswagen Jetta', 147, 31],
+    ['Honda Accord', 192, 32],
+    ['Toyota Camry', 203, 32],
+    ['Nissan Altima', 188, 32],
+    ['Hyundai Sonata', 191, 32],
+    ['Kia Optima', 185, 29],
+    ['Ford Fusion', 175, 28],
+    ['Chevrolet Malibu', 163, 29],
+    ['BMW 3 Series', 255, 28],
+    ['Mercedes C-Class', 255, 26],
+    ['Audi A4', 201, 28],
+    ['Lexus ES', 203, 28],
+    ['Acura TLX', 272, 26],
+    ['Ford Mustang', 310, 22],
+    ['Chevrolet Camaro', 275, 22],
+    ['Dodge Challenger', 303, 19],
+    ['Nissan 370Z', 332, 22],
+    ['Toyota Supra', 382, 25],
+    ['Porsche 911', 379, 22],
+    ['Chevrolet Corvette', 495, 19],
+    ['Ford F-150', 290, 22],
+    ['Ram 1500', 305, 22],
+    ['Chevrolet Silverado', 285, 20],
+    ['Toyota Tundra', 381, 18],
+    ['Honda CR-V', 190, 30],
+    ['Toyota RAV4', 203, 30],
+    ['Mazda CX-5', 187, 28],
+    ['Subaru Forester', 182, 29],
+    ['Ford Escape', 181, 28],
+    ['Jeep Grand Cherokee', 293, 22],
+    ['Toyota Highlander', 295, 24],
+    ['Honda Pilot', 280, 23],
+    ['Ford Explorer', 300, 21],
+    ['Chevrolet Tahoe', 355, 20],
+    ['GMC Yukon', 355, 20],
+    ['Tesla Model 3', 283, 132],  # MPGe (electric equivalent)
+    ['Tesla Model S', 670, 120],  # MPGe
+    ['Nissan Leaf', 147, 111],    # MPGe
+    ['Chevrolet Bolt', 200, 120],  # MPGe
+]
+
+# Extract data
+car_names = [car[0] for car in cars_data]
+horsepower = [car[1] for car in cars_data]
+mpg = [car[2] for car in cars_data]
+
+# Create scatter plot
+plt.figure(figsize=(10, 6))
+scatter = plt.scatter(horsepower, mpg, alpha=0.7, s=100, c=horsepower, 
+                     cmap='viridis', edgecolors='black', linewidth=0.5)
+
+# Add labels for some notable cars
+notable_cars = ['Toyota Prius', 'Tesla Model 3', 'Chevrolet Corvette', 
+                'Ford F-150', 'Honda Civic', 'Porsche 911']
+for i, name in enumerate(car_names):
+    if name in notable_cars:
+        plt.annotate(name, (horsepower[i], mpg[i]), 
+                    xytext=(5, 5), textcoords='offset points', 
+                    fontsize=8, alpha=0.8)
+
+plt.xlabel('Horsepower (HP)', fontsize=11)
+plt.ylabel('Fuel Efficiency (MPG / MPGe)', fontsize=11)
+plt.title('Car Performance: Horsepower vs Fuel Efficiency\n(Real Car Data)', fontsize=12)
+plt.colorbar(scatter, label='Horsepower (HP)')
+plt.grid(True, alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+
+## Conclusion
+
+This demonstrates how Quarto can seamlessly integrate Python code and visualizations into professional documents that can be hosted publicly on GitHub Pages!
