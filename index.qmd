@@ -10,7 +10,7 @@ execute:
 
 # Welcome to My Portfolio! 📊
 
-Hello! My nickname is Brice Donaldson. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills.
+Hello! My nickname is BriceD. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills.
 
 ## About This Portfolio
 
