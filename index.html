@@ -101,7 +101,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="welcome-to-my-portfolio" class="level1">
 <h1>Welcome to My Portfolio! 📊</h1>
-<p>Hello! My nickname is Brice Donaldson. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills.</p>
+<p>Hello! My nickname is BriceD. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills.</p>
 <section id="about-this-portfolio" class="level2">
 <h2 class="anchored" data-anchor-id="about-this-portfolio">About This Portfolio</h2>
 <p>This portfolio demonstrates how Quarto can seamlessly integrate Python code and visualizations into professional documents. Each chart below is created using matplotlib and embedded directly into this document.</p>
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="simple-line-chart" class="level2">
 <h2 class="anchored" data-anchor-id="simple-line-chart">Simple Line Chart</h2>
 <p>Let’s create a simple line chart showing some sample data:</p>
-<div id="c14f7734" class="cell" data-execution_count="1">
+<div id="9f0fc81f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -138,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="bar-chart-example" class="level2">
 <h2 class="anchored" data-anchor-id="bar-chart-example">Bar Chart Example</h2>
 <p>Here’s a bar chart showing some sample data:</p>
-<div id="7442a16b" class="cell" data-execution_count="2">
+<div id="f4a2d9ad" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample data for bar chart</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>, <span class="st">'E'</span>]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">23</span>, <span class="dv">45</span>, <span class="dv">56</span>, <span class="dv">78</span>, <span class="dv">32</span>]</span>
@@ -167,35 +167,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="scatter-plot-car-performance-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="scatter-plot-car-performance-analysis">Scatter Plot: Car Performance Analysis</h2>
 <p>Here’s a scatter plot analyzing the relationship between engine horsepower and fuel efficiency (MPG) for different vehicles:</p>
-<div id="5fa61de5" class="cell" data-execution_count="3">
+<div id="40040d8f" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set random seed for reproducibility</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate random car data</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>n_cars <span class="op">=</span> <span class="dv">50</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>horsepower <span class="op">=</span> np.random.randint(<span class="dv">100</span>, <span class="dv">400</span>, n_cars)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Inverse relationship: higher horsepower generally means lower MPG</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> <span class="dv">45</span> <span class="op">-</span> (horsepower <span class="op">/</span> <span class="dv">10</span>) <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n_cars)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> np.clip(mpg, <span class="dv">10</span>, <span class="dv">50</span>)  <span class="co"># Keep MPG in reasonable range</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="fl">4.75</span>))</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>plt.scatter(horsepower, mpg, alpha<span class="op">=</span><span class="fl">0.6</span>, s<span class="op">=</span><span class="dv">80</span>, c<span class="op">=</span>horsepower, </span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>            cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolors<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Horsepower (HP)'</span>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Fuel Efficiency (MPG)'</span>)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Car Performance: Horsepower vs Fuel Efficiency'</span>)</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.colorbar(label<span class="op">=</span><span class="st">'Horsepower (HP)'</span>)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Real car data: [Car Model, Horsepower, MPG (combined)]</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>cars_data <span class="op">=</span> [</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Toyota Prius'</span>, <span class="dv">121</span>, <span class="dv">52</span>],</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Honda Civic'</span>, <span class="dv">158</span>, <span class="dv">36</span>],</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Toyota Corolla'</span>, <span class="dv">139</span>, <span class="dv">35</span>],</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Mazda3'</span>, <span class="dv">186</span>, <span class="dv">32</span>],</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Hyundai Elantra'</span>, <span class="dv">147</span>, <span class="dv">33</span>],</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Nissan Sentra'</span>, <span class="dv">149</span>, <span class="dv">33</span>],</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Subaru Impreza'</span>, <span class="dv">152</span>, <span class="dv">31</span>],</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Volkswagen Jetta'</span>, <span class="dv">147</span>, <span class="dv">31</span>],</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Honda Accord'</span>, <span class="dv">192</span>, <span class="dv">32</span>],</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Toyota Camry'</span>, <span class="dv">203</span>, <span class="dv">32</span>],</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Nissan Altima'</span>, <span class="dv">188</span>, <span class="dv">32</span>],</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Hyundai Sonata'</span>, <span class="dv">191</span>, <span class="dv">32</span>],</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Kia Optima'</span>, <span class="dv">185</span>, <span class="dv">29</span>],</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Ford Fusion'</span>, <span class="dv">175</span>, <span class="dv">28</span>],</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Chevrolet Malibu'</span>, <span class="dv">163</span>, <span class="dv">29</span>],</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'BMW 3 Series'</span>, <span class="dv">255</span>, <span class="dv">28</span>],</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Mercedes C-Class'</span>, <span class="dv">255</span>, <span class="dv">26</span>],</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Audi A4'</span>, <span class="dv">201</span>, <span class="dv">28</span>],</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Lexus ES'</span>, <span class="dv">203</span>, <span class="dv">28</span>],</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Acura TLX'</span>, <span class="dv">272</span>, <span class="dv">26</span>],</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Ford Mustang'</span>, <span class="dv">310</span>, <span class="dv">22</span>],</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Chevrolet Camaro'</span>, <span class="dv">275</span>, <span class="dv">22</span>],</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Dodge Challenger'</span>, <span class="dv">303</span>, <span class="dv">19</span>],</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Nissan 370Z'</span>, <span class="dv">332</span>, <span class="dv">22</span>],</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Toyota Supra'</span>, <span class="dv">382</span>, <span class="dv">25</span>],</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Porsche 911'</span>, <span class="dv">379</span>, <span class="dv">22</span>],</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Chevrolet Corvette'</span>, <span class="dv">495</span>, <span class="dv">19</span>],</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Ford F-150'</span>, <span class="dv">290</span>, <span class="dv">22</span>],</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Ram 1500'</span>, <span class="dv">305</span>, <span class="dv">22</span>],</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Chevrolet Silverado'</span>, <span class="dv">285</span>, <span class="dv">20</span>],</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Toyota Tundra'</span>, <span class="dv">381</span>, <span class="dv">18</span>],</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Honda CR-V'</span>, <span class="dv">190</span>, <span class="dv">30</span>],</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Toyota RAV4'</span>, <span class="dv">203</span>, <span class="dv">30</span>],</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Mazda CX-5'</span>, <span class="dv">187</span>, <span class="dv">28</span>],</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Subaru Forester'</span>, <span class="dv">182</span>, <span class="dv">29</span>],</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Ford Escape'</span>, <span class="dv">181</span>, <span class="dv">28</span>],</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Jeep Grand Cherokee'</span>, <span class="dv">293</span>, <span class="dv">22</span>],</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Toyota Highlander'</span>, <span class="dv">295</span>, <span class="dv">24</span>],</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Honda Pilot'</span>, <span class="dv">280</span>, <span class="dv">23</span>],</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Ford Explorer'</span>, <span class="dv">300</span>, <span class="dv">21</span>],</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Chevrolet Tahoe'</span>, <span class="dv">355</span>, <span class="dv">20</span>],</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'GMC Yukon'</span>, <span class="dv">355</span>, <span class="dv">20</span>],</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Tesla Model 3'</span>, <span class="dv">283</span>, <span class="dv">132</span>],  <span class="co"># MPGe (electric equivalent)</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Tesla Model S'</span>, <span class="dv">670</span>, <span class="dv">120</span>],  <span class="co"># MPGe</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Nissan Leaf'</span>, <span class="dv">147</span>, <span class="dv">111</span>],    <span class="co"># MPGe</span></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'Chevrolet Bolt'</span>, <span class="dv">200</span>, <span class="dv">120</span>],  <span class="co"># MPGe</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract data</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>car_names <span class="op">=</span> [car[<span class="dv">0</span>] <span class="cf">for</span> car <span class="kw">in</span> cars_data]</span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>horsepower <span class="op">=</span> [car[<span class="dv">1</span>] <span class="cf">for</span> car <span class="kw">in</span> cars_data]</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> [car[<span class="dv">2</span>] <span class="cf">for</span> car <span class="kw">in</span> cars_data]</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scatter plot</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">6</span>))</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>scatter <span class="op">=</span> plt.scatter(horsepower, mpg, alpha<span class="op">=</span><span class="fl">0.7</span>, s<span class="op">=</span><span class="dv">100</span>, c<span class="op">=</span>horsepower, </span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>                     cmap<span class="op">=</span><span class="st">'viridis'</span>, edgecolors<span class="op">=</span><span class="st">'black'</span>, linewidth<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="co"># Add labels for some notable cars</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>notable_cars <span class="op">=</span> [<span class="st">'Toyota Prius'</span>, <span class="st">'Tesla Model 3'</span>, <span class="st">'Chevrolet Corvette'</span>, </span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Ford F-150'</span>, <span class="st">'Honda Civic'</span>, <span class="st">'Porsche 911'</span>]</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, name <span class="kw">in</span> <span class="bu">enumerate</span>(car_names):</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> name <span class="kw">in</span> notable_cars:</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>        plt.annotate(name, (horsepower[i], mpg[i]), </span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>                    xytext<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">5</span>), textcoords<span class="op">=</span><span class="st">'offset points'</span>, </span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>                    fontsize<span class="op">=</span><span class="dv">8</span>, alpha<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Horsepower (HP)'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Fuel Efficiency (MPG / MPGe)'</span>, fontsize<span class="op">=</span><span class="dv">11</span>)</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Car Performance: Horsepower vs Fuel Efficiency</span><span class="ch">\n</span><span class="st">(Real Car Data)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>plt.colorbar(scatter, label<span class="op">=</span><span class="st">'Horsepower (HP)'</span>)</span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/cell-4-output-1.png" width="644" height="446" class="figure-img"></p>
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="894" height="566" class="figure-img"></p>
 </figure>
 </div>
 </div>
